@@ -3,14 +3,16 @@ import {SafeAreaView, StyleSheet, Text, View, Image, Pressable} from 'react-nati
 import {Picker, Item} from '@react-native-picker/picker'; 
 
 export default function App() {
+  const [selectedVeg, setSelectedVeg] = useState("1");
   const [selectedVegQuant, setSelectedVegQuant] = useState("1");
+  const [selectedFruit, setSelectedFruit] = useState("1");
   const [selectedFruitQuant, setSelectedFruitQuant] = useState("1");
 
   const [price, setPrice] = useState("");
 
   calculatePrice = () => {
-    let vegPrice;
-    let fruitPrice;
+    let vegPrice = parseInt(selectedVeg);
+    let fruitPrice = parseInt(selectedFruit);
     let vegQuant = parseInt(selectedVegQuant);
     let fruitQuant = parseInt(selectedFruitQuant);
 
@@ -29,6 +31,17 @@ export default function App() {
 
     <View style={styles.body}>
       <View style={styles.pickers}>
+
+      <Picker
+      style={styles.itemPicker}
+      selectedValue={selectedVeg}
+      onValueChange={(itemValue, itemIndex) =>
+       setSelectedVeg(itemValue)
+      }>
+      <Picker.Item label="Potato - $5" value="5"/>
+      <Picker.Item label="Carrot - $8" value = "8"/>
+     </Picker>
+
         <Picker 
           style={styles.quantityPicker}
           selectedValue={selectedVegQuant}
@@ -44,6 +57,16 @@ export default function App() {
       </View>
 
       <View style={styles.pickers}>
+      <Picker
+      style={styles.itemPicker}
+      selectedValue={selectedFruit}
+      onValueChange={(itemValue, itemIndex) =>
+       setSelectedFruit(itemValue)
+      }>
+      <Picker.Item label="Orange - $11" value="11"/>
+      <Picker.Item label="Blueberry - $12" value = "12"/>
+     </Picker>
+
         <Picker 
           style={styles.quantityPicker}
           selectedValue={selectedFruitQuant}
@@ -120,6 +143,10 @@ export default function App() {
       width: 300,
       height: 100
     },
+    itemPicker: {
+      flex: 3,
+      marginRight: -10,
+      },
 
     quantityPicker: {
       flex: 1,
