@@ -3,9 +3,9 @@ import {SafeAreaView, StyleSheet, Text, View, Image, Pressable} from 'react-nati
 import {Picker, Item} from '@react-native-picker/picker'; 
 
 export default function App() {
-  const [selectedVeg, setSelectedVeg] = useState("1");
+  const [selectedVeg, setSelectedVeg] = useState("5");
   const [selectedVegQuant, setSelectedVegQuant] = useState("1");
-  const [selectedFruit, setSelectedFruit] = useState("1");
+  const [selectedFruit, setSelectedFruit] = useState("11");
   const [selectedFruitQuant, setSelectedFruitQuant] = useState("1");
 
   const [price, setPrice] = useState("");
