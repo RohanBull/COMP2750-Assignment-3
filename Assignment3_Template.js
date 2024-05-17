@@ -3,35 +3,33 @@ import { SafeAreaView, StyleSheet, Text, View, Image, Pressable } from 'react-na
 import { Picker, Item } from '@react-native-picker/picker';
 
 export default function App() {
-  const [selectedVeg, setSelectedVeg] = useState("$0");
+<<<<<<< Updated upstream
+  const [selectedVeg, setSelectedVeg] = useState("5");
+  const [selectedVegQuant, setSelectedVegQuant] = useState("1");
+  const [selectedFruit, setSelectedFruit] = useState("11");
+  const [selectedFruitQuant, setSelectedFruitQuant] = useState("1");
+=======
+  const [selectedVeg, setSelectedVeg] = useState("1");
   const [selectedVegQuant, setSelectedVegQuant] = useState("0");
-  const [selectedFruit, setSelectedFruit] = useState("$0");
+  const [selectedFruit, setSelectedFruit] = useState("1");
   const [selectedFruitQuant, setSelectedFruitQuant] = useState("0");
+>>>>>>> Stashed changes
 
   const [price, setPrice] = useState("");
 
   calculatePrice = () => {
     const vegValue = selectedVeg.split("$");
-    const fruitValue = selectedFruit.split("$");
-
     let vegPrice = parseInt(vegValue[1]);
+    const fruitValue = selectedFruit.split("$");
     let fruitPrice = parseInt(fruitValue[1]);
     let vegQuant = parseInt(selectedVegQuant);
     let fruitQuant = parseInt(selectedFruitQuant);
+    let priceMaybe = parseInt((vegPrice * vegQuant) + fruitPrice * fruitQuant);
 
-    let price = parseInt((vegPrice * vegQuant) + fruitPrice * fruitQuant);
-
-    if (vegPrice === 0 && fruitPrice === 0) {
-      setPrice("Please select an item.");
-    }
-    else if (vegQuant < 1 && fruitQuant < 1) {
-      setPrice("Please select a quantity.")
-    }
-    else if (price === 0) {
-      setPrice("Please select at least one item having a quantity of 1.");
-    }
-    else {
-      setPrice("    $" + price);
+    if (parseInt(priceMaybe) != 0) {
+      setPrice("    $" + parseInt((vegPrice * vegQuant) + fruitPrice * fruitQuant));
+    } else {
+      setPrice("Please buy something");
     }
   }
 
@@ -147,11 +145,6 @@ const styles = StyleSheet.create({
   },
 
   footer: {
-    position: "absolute",
-    bottom: 0,
-    marginBottom: 5,
-    width: "100%",
-    padding: 10,
     flex: .25,
     backgroundColor: 'white'
   },
@@ -212,7 +205,7 @@ const styles = StyleSheet.create({
 
   output: {
     textAlign: "left",
-    marginTop: 10,
+    marginTop: 20,
     fontSize: 22,
     backgroundColor: '#456aff',
     padding: 10,
