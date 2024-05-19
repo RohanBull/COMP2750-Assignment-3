@@ -41,7 +41,7 @@ export default function App() {
         <Text style={styles.heading}> Produce Owners Group App </Text>
         <Image
           style={styles.image}
-          source={{ uri: 'https://images.unsplash.com/photo-1495570689269-d883b1224443?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', }}
+          source={{ uri: 'https://cdn.discordapp.com/attachments/1214345556487307315/1241634362265440296/7102583091_746d99b373_b.png?ex=664ae99c&is=6649981c&hm=9280b494e8c1002417805d87f0bc3aa2c132ffd2fa3f460e0d29a5cc98c08fe1&', }}
         />
       </View>
 
@@ -133,17 +133,17 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     flex: 5,
-    backgroundColor: 'lightblue'
+    backgroundColor: '#e6e6e6'
   },
 
   header: {
-    flex: 1.5,
-    backgroundColor: 'pink'
+    flex: 1.2,
+    backgroundColor: 'e6e6e6'
   },
 
   body: {
     flex: 4,
-    backgroundColor: 'lightblue'
+    backgroundColor: 'e6e6e6'
   },
 
   footer: {
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     width: "100%",
     padding: 10,
     flex: .25,
-    backgroundColor: 'white'
+    backgroundColor: 'lightblue'
   },
 
   heading: {
@@ -170,10 +170,10 @@ const styles = StyleSheet.create({
 
   image: {
     marginTop: 15,
-    padding: 20,
+    
     alignSelf: 'center',
-    width: 300,
-    height: 100
+    width: '100%',
+    height: 120
   },
   itemPicker: {
     flex: 3,
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
   },
 
   buttonDiv: {
-    marginTop: 20,
+    marginTop: 30,
     alignItems: 'center'
   },
 
@@ -208,11 +208,12 @@ const styles = StyleSheet.create({
     width: 140,
     height: 60,
     justifyContent: 'center',
+    borderRadius: 15
   },
 
   output: {
     textAlign: "left",
-    marginTop: 10,
+    marginTop: 30,
     fontSize: 22,
     backgroundColor: '#456aff',
     padding: 10,
